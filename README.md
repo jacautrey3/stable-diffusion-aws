@@ -16,7 +16,7 @@ This repository is designed to provision an AWS instance that has stable-diffusi
 6. In the `ansible` directory, run `ansible-playbook install_stable_diffusion.yml` to install stable-diffusion-webui on the instance.
 7. SSH into the instance using the provided private key.
 8. In the `stable-diffusion-webui` directory, run `./webui.sh --skip-torch-cuda-test --precision full --no-half` to start the stable-diffusion-webui.
-9. In a local terminal, run `ssh -i {instance-private-key} -N -L 7680:127.0.0.1:7860 ubuntu@{instance-public-ip}` to establish a secure tunnel to the web interface.
+9. In a local terminal, run `ssh -i {instance-private-key} -N -L 7680:127.0.0.1:7860 ec2-user@{instance-public-ip}` to establish a secure tunnel to the web interface.
 
 Note: Replace `{instance-private-key}` with the actual private key file path and `{instance-public-ip}` with the actual public IP address of the instance.
 
