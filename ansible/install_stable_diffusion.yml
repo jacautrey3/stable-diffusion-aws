@@ -21,3 +21,4 @@
       git:
         repo: https://github.com/AUTOMATIC1111/stable-diffusion-webui.git
         dest: /home/ec2-user/stable-diffusion-webui
+      become: no
