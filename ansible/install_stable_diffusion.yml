@@ -1,0 +1,23 @@
+---
+- name: Setup Stable Diffusion WebUI
+  hosts: all
+  become: yes
+  tasks:
+    - name: Update packages
+      yum:
+        name: "*"
+        state: latest
+    - name: Install dependencies
+      yum:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - git
+        - wget
+        - python3
+        - gperftools-libs
+        - libglvnd-glx
+    - name: Git Clone Stable Diffusion WebUI Automatic1111
+      git:
+        repo: https://github.com/AUTOMATIC1111/stable-diffusion-webui.git
+        dest: /home/ec2-user/stable-diffusion-webui
